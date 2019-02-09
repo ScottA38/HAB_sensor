@@ -3,13 +3,8 @@ UPLOAD_SPEED := 115200
 
 CUSTOM_LIBS := ../libraries
 
-ARDUINO_LIBS += SPI
-ARDUINO_LIBS += FastLED
-ARDUINO_LIBS += FastLED_NeoMatrix
-ARDUINO_LIBS += Adafruit-GFX
-ARDUINO_LIBS += fletcher16
-
-BUILD_EXTRA_FLAGS += -DFASTLED_ESP8266_DMA -Os
+ARDUINO_LIBS += Adafruit_Sensor
+ARDUINO_LIBS += DHT-sensor-library
 
 BUILD_ROOT := build
 ESP_ROOT := ../esp-toolchain
