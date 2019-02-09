@@ -18,6 +18,8 @@
 // Feather HUZZAH ESP8266 note: use pins 3, 4, 5, 12, 13 or 14 --
 // Pin 15 can work but DHT must be disconnected during program upload.
 
+#define LDRPIN A0 // pin which reads analogue voltage from LDR
+
 // Uncomment the type of sensor in use:
 #define DHTTYPE    DHT11     // DHT 11
 
@@ -67,10 +69,11 @@ void setup() {
 
 void loop() { 
 
-  float temp, hum;
+  float temp, hum, light;
 
   // Delay between measurements.
   delay(delayMS);
+
   // Get temperature event and print its value.
   sensors_event_t event;
   dht.temperature().getEvent(&event);
@@ -97,12 +100,15 @@ void loop() {
     hum = event.relative_humidity;
   }
 
+  //read in the analogue voltage value and map to a percentage
+  light = (100 * analogRead(LDRPIN)/1024);
+
   if (WiFi.status() != WL_CONNECTED)
     return;
 
   WiFiUDP Udp;
   char buffer[128];
   Udp.beginPacket(HOST, PORT); 
-  Udp.write(buffer, snprintf(buffer, sizeof(buffer), "{\"temperature\":%.2f,\"humidity:\"%.2f}", temp, hum));
+  Udp.write(buffer, snprintf(buffer, sizeof(buffer), "[{ \"device\": {\"location\": \"Outside\", \"status\": {\"temperature\":%.2f,\"humidity\":%.2f,\"light\":%.2f}}}]\n", temp, hum, light));
   Udp.endPacket();
 }
