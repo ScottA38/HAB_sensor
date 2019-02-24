@@ -1,9 +1,8 @@
-This is a simple project for driving a strip of serial LEDs with an esp8826 using the Adafruit_GFX library.
+This is a project to use an ESP8266 module to collect data from both a DHT11 (humdity & temp) sensor and a light dependent resistor and send the data over a LAN network to a specific port
 
 # Modules used:
- - [FastLED](https://github.com/coryking/FastLED) fork with DMA for esp8266 to drive the LEDs
- - [FastLED_NeoMatrix](https://github.com/marcmerlin/FastLED_NeoMatrix) to map the LEDs onto a grid
- - [Adafruit-GFX](https://github.com/adafruit/Adafruit-GFX-Library) for graphic operations on the grid (draw shapes, text, etc)
+ - [Adafruit_sensor](https://github.com/adafruit/Adafruit_Sensor) A library that provides an standardising the software interface to many different types of sensors
+ - [DHT-Sensor-Library](https://github.com/adafruit/DHT-sensor-library) This library interfaces with different variants of the DHT sensor module. It stiplulates the usage of the Unified sensor library
 
 # Building
  - run `./prepare.sh` to set up submodules and toolchain (only needed once)
