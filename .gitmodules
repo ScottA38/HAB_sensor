@@ -1,12 +1,3 @@
-[submodule "libraries/FastLED"]
-	path = libraries/FastLED
-	url = https://github.com/coryking/FastLED.git
-[submodule "libraries/FastLED_NeoMatrix"]
-	path = libraries/FastLED_NeoMatrix
-	url = https://github.com/marcmerlin/FastLED_NeoMatrix.git
-[submodule "libraries/Adafruit-GFX"]
-	path = libraries/Adafruit-GFX
-	url = https://github.com/adafruit/Adafruit-GFX-Library.git
 [submodule "esp-toolchain"]
 	path = esp-toolchain
 	url = https://github.com/esp8266/Arduino.git
