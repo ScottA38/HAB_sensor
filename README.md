@@ -8,4 +8,4 @@ This is a project to use an ESP8266 module to collect data from both a DHT11 (hu
  - run `./prepare.sh` to set up submodules and toolchain (only needed once)
  - run `make upload` to build the project and flash the esp8826
  
- This project will simply connect to the WiFi network specified in [main.ino](https://github.com/benpicco/blinkendisplay/blob/master/src/main.ino#L20) and display the IP address it got once it's connected.
+ This project will simply connect to the WiFi network specified in [src/DHT_Unified_sensor.ino](https://github.com/ScottA38/HAB_sensor) and display the IP address it got once it's connected.
